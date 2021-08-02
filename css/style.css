@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: lightpink;
+}
+.carta{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background-color: purple;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    box-shadow:10px 20px 40px  magenta;
+    transition: 1s;
+}
+.carta:hover{
+    transform: translateX(50%);
+}
+
+.carta .contenido{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carta .contenido .informacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    text-align: center; 
+}
+
+.carta .contenido .informacion h2{
+    font-weight: 600;
+    line-height: 1em;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.carta .contenido .informacion p{
+    font-weight: bold;
+    font-size: larger;
+}
+
+.carta .contenido .informacion h3{
+    font-weight: 500;
+    line-height: 0.5em;
+    font-size: larger;
+    text-decoration: underline;
+    text-transform: capitalize;
+}
+
+.carta .contenido .informacion ul{
+   list-style-type: none; 
+   text-transform: capitalize;
+}
+
+.carta .imgCaja{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    background-color: #000;
+    transition: 1s;
+    box-shadow:10px 20px 40px  magenta;
+}
+
+.carta:hover .imgCaja{
+    transform: rotateY(-180deg);
+}
+.carta .imgCaja img{
+    position: absolute;
+    top: 0;
+    left: o;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+
+}
+
+.carta .imgCaja img:nth-child(2){
+    transform: rotateY(180deg);
+}
